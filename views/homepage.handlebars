@@ -1,0 +1,26 @@
+    {{!-- <div class="pure-g">
+        <div class="pure-u-23-24 center-item-h">
+            <h3>Why MVC is so important</h3>
+            <p>MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.</p>
+        </div>
+    </div>
+        <div class="pure-g">
+        <div class="pure-u-23-24 center-item-h">
+            <h3>Why MVC is so important</h3>
+            <p>MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.</p>
+        </div>
+    </div>
+        <div class="pure-g">
+        <div class="pure-u-23-24 center-item-h">
+            <h3>Why MVC is so important</h3>
+            <p>MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.</p>
+        </div>
+    </div> --}}
+    {{#each notes as |note|}}
+    <div class="pure-g">
+        <div class="pure-u-23-24 center-item-h">
+        <h3>{{note.name}}</h3>
+        <p>{{note.description}}</p>
+      </div>
+    </div>
+  {{/each}}
