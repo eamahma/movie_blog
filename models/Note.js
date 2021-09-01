@@ -22,7 +22,6 @@ Note.init(
     date: {
       type: DataTypes.DATEONLY,
       allowNull: false,
-      defaultValue: Sequelize.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
