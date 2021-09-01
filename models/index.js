@@ -11,8 +11,8 @@ Note.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Genre.hasMany(Note, {
-  foreignKey: 'note_id'
-});
+// Genre.hasMany(Note, {
+//   foreignKey: 'note_id'
+// });
 
 module.exports = { User, Note, Genre};

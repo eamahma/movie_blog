@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Action"
+    },
+    {
+        "name": "Adventure"   
+    },
+    {
+        "name": "Musical"   
+    },        
+    {
+        "name": "Crime"   
+    },    
+    {
+        "name": "Comedy"   
+    },    
+    {
+        "name": "Drama"
+    }
+  ]
