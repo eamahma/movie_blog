@@ -1,6 +1,7 @@
 const User = require('./User');
 const Note = require('./Note');
 
+
 User.hasMany(Note, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
