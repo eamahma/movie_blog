@@ -11,39 +11,25 @@ Note.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    Comment: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    genre_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'genre',
-        key: 'id',
-      },
-    },
+    }
   },
   {
+      /*
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
+    */
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'note',
+    modelName: 'user',
   }
 );
 
