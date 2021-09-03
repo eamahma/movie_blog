@@ -1,4 +1,5 @@
 const path = require('path');
+
 const exphbs = require('express-handlebars');
 const express = require('express');
 const session = require('express-session');
@@ -9,6 +10,7 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,6 +18,10 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+
+
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
@@ -37,6 +43,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //added public/css to route.
 app.use(express.static(path.join(__dirname, 'public/css')));
+
+// Set Handlebars as the default template engine.
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('./controllers/index'));
+
 
 app.use(routes);
 
