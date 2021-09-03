@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "username", "email", "password"], //remove password in the futrue
+    attributes: ["id", "username", "email", "password"], 
     include: [
       {
         model: Post,
@@ -45,7 +45,7 @@ router.get("/:id", (req, res) => {
         attributes: ["id", "comment_text", "post_id"],
       },
     ],
-  }) //include the posts and comments of this user
+  }) 
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(404).json({ message: "No User found with this id" });
@@ -59,7 +59,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//add user
+
 router.post("/", (req, res) => {
   User.create({
     //expects username, email, password
