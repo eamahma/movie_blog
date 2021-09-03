@@ -21,8 +21,32 @@ Note.init(
 
       type: DataTypes.STRING,
       allowNull: false,
-    }
-  },
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // date: {
+    //   type: DataTypes.DATEONLY,
+    //   allowNull: false,
+    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    genre_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'genre',
+        key: 'id',
+      },
+    },
+
+  }, 
+  
   {
       /*
     hooks: {
@@ -31,7 +55,7 @@ Note.init(
         return newUserData;
       },
     },
-    */
+    
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -63,7 +87,7 @@ Note.init(
     },
 
   },
-  {
+  //{
       /*
     hooks: {
       beforeCreate: async (newUserData) => {
@@ -76,7 +100,7 @@ Note.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'note',
   }
 );
 

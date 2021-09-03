@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>The Tech Blog</title>
-  <link rel="stylesheet" href="/public/css/style.css">
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
 </head>
@@ -28,15 +28,15 @@
         </div>
         <h1 class="pure-menu pure-menu-horizontal">       
             <!-- <a href="#" class="pure-menu-heading pure-menu-link" id="banner">The Tech Blog</a> -->
-            <span id="banner">The Movie Blog</span>
+            <span id="banner" >The Movie Blog</span>
+            
         </h1>
     </nav>
 
 
     
     {{{ body }}}
-
-
+  
 
 
 
@@ -69,7 +69,7 @@
       <button class="btn" id="logout">logout</button>
 
       <li class="pure-menu-item">
-        <a href="/views/profile.handlebars" class="pure-menu-link">Profile</a>
+        <a href="/views/profile" class="pure-menu-link">Profile</a>
       </li>
 
     </nav>
@@ -83,8 +83,32 @@
   </footer>
 
   {{#if logged_in}}
-  <script src="/public/css/logout.js"></script>
+  <script src="/css/logout.js"></script>
   {{/if}}
+  <nav id="navbar">
+        <ul id="navbar-ul">
+            <li>
+                <p><a class="link" href="/">Home</a></p>
+            </li>
+            {{#if loggedIn}}
+            <li>
+                <p><a class="link" href="/dashboard">Dashboard</a></p>
+            </li>
+            <li>
+                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
+            </li>
+
+            {{else}}
+            <li>
+                <p><a class="link" href="/login">Login</a></p>
+            </li>
+            {{/if}}
+        </ul>
+        <h1 id="nav-header">The Movie Blog</h1>
+    </nav>
+    {{{body}}}
+
+
 </body>
 
 
@@ -97,5 +121,6 @@
   </div>
 
 </body>
-
+<script src="/js/logout.js"></script>
+<script src="/js/home.js"></script>
 </html>
