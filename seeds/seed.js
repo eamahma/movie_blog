@@ -21,6 +21,12 @@ const seedDatabase = async () => {
     });
   }
 
+  for (const genre of genreData) {
+    await Genre.create({
+      ...genre,
+    });
+  }
+
   process.exit(0);
 };
 

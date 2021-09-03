@@ -1,15 +1,9 @@
-
-//This is a placeholder Model for comment. 
-//We will replace note with user comments, functionality will be largely similar. 
-
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Note extends Model {
-}
+class Genre extends Model {}
 
-Note.init(
+Genre.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,30 +11,12 @@ Note.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Comment: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
-  },
-  {
-      /*
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
-    */
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    date: {
-      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     user_id: {
@@ -50,10 +26,10 @@ Note.init(
         key: 'id',
       },
     },
-    genre_id: {
+    note_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'genre',
+        model: 'note',
         key: 'id',
       },
     },
@@ -63,8 +39,8 @@ Note.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'note',
+    modelName: 'genre',
   }
 );
 
-module.exports = Note;
+module.exports = Genre;
