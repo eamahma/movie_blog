@@ -2,8 +2,8 @@ const sequelize = require('../config/connection');
 const { User, Note } = require('../models');
 
 const userData = require('./userData.json');
-const noteData = require('./noteData.json');
-const genreData = require('./genreData.json');
+//const noteData = require('./noteData.json');
+//const genreData = require('./genreData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,6 +13,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  
   for (const note of noteData) {
     await Note.create({
       ...note,

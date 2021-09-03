@@ -13,11 +13,12 @@ module.exports = {
       return `<span for="img" aria-label="book">${book}</span>`;
     },
   };
-  
+
 
   format_date: (date) => {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
 };
+
 

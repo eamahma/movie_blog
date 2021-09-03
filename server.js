@@ -20,8 +20,10 @@ const hbs = exphbs.create({ helpers });
 
 
 
+
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
+
 
 const sess = {
   secret: 'Super secret secret',
@@ -39,6 +41,12 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 //app.engine('html', hbs.engine);
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//added public/css to route.
+app.use(express.static(path.join(__dirname, 'public/css')));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //added public/css to route.
@@ -52,6 +60,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/index'));
+
 
 
 app.use(routes);

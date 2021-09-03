@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="/public/css/style.css">
   <link rel="stylesheet" href="/public/css/style.css">
 
-  <title>The Movie Blog</title>
-  <link rel="stylesheet" href="./css/jass.css">
-  <link rel="stylesheet" href="./css/style.css">
-
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
 </head>
 <body>
@@ -71,9 +67,11 @@
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
+
       <li class="pure-menu-item">
         <a href="/views/profile.handlebars" class="pure-menu-link">Profile</a>
       </li>
+
     </nav>
     {{/if}}
   </header>
