@@ -3,7 +3,7 @@ const { User, Post, Comment } = require("../../models");
 //get all the users
 router.get("/", (req, res) => {
   User.findAll({
-    attributes: ["id", "username", "email", "password"], 
+    attributes: ["id", "name", "email", "password"], 
     include: [
       {
         model: Post,
@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "username", "email", "password"], 
+    attributes: ["id", "name", "email", "password"], 
     include: [
       {
         model: Post,
@@ -63,7 +63,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   User.create({
     //expects username, email, password
-    username: req.body.username,
+    name: req.body.name,
     email: req.body.email,
     password: req.body.password,
   })
@@ -72,7 +72,7 @@ router.post("/", (req, res) => {
       req.session.save(() => {
         // we run the save function
         req.session.user_id = dbUserData.id; //and give it the data we want to save
-        req.session.username = dbUserData.username;
+        req.session.name = dbUserData.name;
         req.session.loggedIn = true;
         res.json(dbUserData); //Run this in callback so we make sure the session is updated before we respond
       });
@@ -108,7 +108,7 @@ router.post("/login", (req, res) => {
       req.session.save(() => {
         //declare session variables
         req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
+        req.session.name = dbUserData.name;
         req.session.loggedIn = true;
         //send response
         res.json({ user: dbUserData, message: "You are now logged in!" });
@@ -121,10 +121,11 @@ router.post("/login", (req, res) => {
 });
 
 router.put("/", (_req, res) => {
-  //TODO
-  res.send(`update user`); // not sure what this will do yet
+  res.send(`update user`); 
 });
 
+
+//deletes user.
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: {

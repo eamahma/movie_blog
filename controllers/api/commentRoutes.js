@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
       {
         model: User,
         as: "user",
-        attributes: ["username"],
+        attributes: ["name"],
       },
     ],
   }) //include the posts and comments of this user
@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
       {
         model: User,
         as: "user",
-        attributes: ["username"],
+        attributes: ["name"],
       },
     ],
   }) //include the posts and comments of this user

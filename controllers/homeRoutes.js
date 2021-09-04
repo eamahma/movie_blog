@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
       {
         model: User,
         as: "user",
-        attributes: ["username"],
+        attributes: ["name"],
       },
       {
         model: Comment,
@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
       }
       const posts = dbPostData.map((post) => post.get({ plain: true })); // serialize all the posts
       console.log(posts);
-      res.render("home", { posts, loggedIn: req.session.loggedIn });
+      res.render("homepage", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -48,7 +48,7 @@ router.get("/viewpost/:id", (req, res) => {
       {
         model: User,
         as: "user",
-        attributes: ["username"],
+        attributes: ["name"],
       },
       {
         model: Comment,
@@ -58,7 +58,7 @@ router.get("/viewpost/:id", (req, res) => {
           {
             model: User,
             as: "user",
-            attributes: ["username"],
+            attributes: ["name"],
           },
         ],
       },
@@ -91,9 +91,9 @@ router.get("/login", (req, res) => {
   res.render("login", { loggedIn: req.session.loggedIn });
 });
 
-//serve up the dashboard
+//this routes the user to the dashboard.
 router.get("/dashboard", (req, res) => {
-  //we need to get all posts
+  //retrieves all posts associated with user. 
   console.log(req.session.user_id, " this is the session id");
   Post.findAll({
     where: {
@@ -104,7 +104,7 @@ router.get("/dashboard", (req, res) => {
       {
         model: User,
         as: "user",
-        attributes: ["username"],
+        attributes: ["name"],
       },
       {
         model: Comment,
@@ -114,7 +114,7 @@ router.get("/dashboard", (req, res) => {
           {
             model: User,
             as: "user",
-            attributes: ["username"],
+            attributes: ["name"],
           },
         ],
       },
