@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tech Blog</title>
-  <link rel="stylesheet" href="./css/jass.css">
-  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
 </head>
 <body>
@@ -26,15 +28,17 @@
         </div>
         <h1 class="pure-menu pure-menu-horizontal">       
             <!-- <a href="#" class="pure-menu-heading pure-menu-link" id="banner">The Tech Blog</a> -->
-            <span id="banner">The Tech Blog</span>
+            
+            <span id="banner" >The Movie Blog</span>
+            
+
         </h1>
     </nav>
 
 
     
     {{{ body }}}
-
-
+  
 
 
     <div class="pure-g">
@@ -56,11 +60,68 @@
         </div>
     </div>
 
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+      User Registry
+    </h1>
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+
+      <li class="pure-menu-item">
+        <a href="/views/profile" class="pure-menu-link">Profile</a>
+      </li>
+
+    </nav>
+    {{/if}}
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  {{#if logged_in}}
+  <script src="/css/logout.js"></script>
+  {{/if}}
+  <nav id="navbar">
+        <ul id="navbar-ul">
+            <li>
+                <p><a class="link" href="/">Home</a></p>
+            </li>
+            {{#if loggedIn}}
+            <li>
+                <p><a class="link" href="/dashboard">Dashboard</a></p>
+            </li>
+            <li>
+                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
+            </li>
+
+            {{else}}
+            <li>
+                <p><a class="link" href="/login">Login</a></p>
+            </li>
+            {{/if}}
+        </ul>
+        <h1 id="nav-header">The Movie Blog</h1>
+    </nav>
+    {{{body}}}
+
+
+</body>
+
+
+
+
     <footer>
       
     </footer>
   </div>
 
 </body>
-
+<script src="/js/logout.js"></script>
+<script src="/js/home.js"></script>
 </html>
