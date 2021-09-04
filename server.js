@@ -13,9 +13,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
+
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-
 
 const sess = {
   secret: 'Super secret secret',
@@ -36,6 +36,24 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//Important Note: our /js routing is a bit confusing due to the public/css file share. Keep this in mind when firing new routes!
+
+app.use(express.static(path.join(__dirname, 'public/css')));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//added public/css to route.
+app.use(express.static(path.join(__dirname, 'public/css')));
+
+// Set Handlebars as the default template engine.
+
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -46,11 +64,6 @@ app.use('/', routes);
 //app.use(require('./controllers/index'));
 
 
-/*
-app.use(routes);
-app.use(app.router);
-routes.initialize(app);
-*/
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
