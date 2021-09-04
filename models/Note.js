@@ -6,8 +6,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Note extends Model {
-}
+class Note extends Model {}
 
 Note.init(
   {
@@ -17,36 +16,21 @@ Note.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Comment: {
+  //   Comment: {
 
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
-  },
-  {
-      /*
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
-    */
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //   }
+  // },
+ // {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-
-    }
-
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // date: {
-    //   type: DataTypes.DATEONLY,
-    //   allowNull: false,
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
