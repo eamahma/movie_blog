@@ -16,7 +16,8 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create review');
+        console.log("profile route error 1");
+        alert('Failed to generate.');
       }
     }
   };
@@ -32,6 +33,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
+        console.log("Comment route error 2");
         alert('Failed to delete project');
       }
     }

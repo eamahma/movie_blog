@@ -24,6 +24,7 @@ async function logout() {
   if (response.ok) {
     document.location.replace("/");
   } else {
+    console.log("logout error 1");
     alert(response.statusText);
   }
 }

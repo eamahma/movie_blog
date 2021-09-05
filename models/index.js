@@ -1,6 +1,6 @@
 const User = require('./User');
 const Note = require('./Note');
-//const Genre = require('./Genre');
+const Genre = require('./Genre');
 const Comment = require("./Comment");
 const Post = require("./Post");
 
@@ -42,7 +42,7 @@ const Comment = require("./Comment");
 */
 
 //add genre when firing
-module.exports = { User, Note, Post, Comment};
+module.exports = { User, Note, Post, Comment, Genre};
 
 
 

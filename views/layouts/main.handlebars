@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
 
+  <title>The Movie Blog</title>
+
+ 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/style.css">
 
@@ -16,15 +18,21 @@
         <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Home</a>
+                    <a href="/" class="pure-menu-link">Home</a>
+                </li>
+                {{#if loggedIn}}
+                <li class="pure-menu-item">
+                    <a href="/" class="pure-menu-link">Home(logged in)</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Dashboard</a>
+                    <a href="/login" class="pure-menu-link">Signup or Login!</a>
                 </li>
+                {{else}}
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Login</a>
+                    <a href="/login" class="pure-menu-link">signup!</a>
                 </li>
             </ul>
+             {{/if}}
         </div>
         <h1 class="pure-menu pure-menu-horizontal">       
             <!-- <a href="#" class="pure-menu-heading pure-menu-link" id="banner">The Tech Blog</a> -->
@@ -35,9 +43,18 @@
         </h1>
     </nav>
 
+    <h1>
+      User Registry
+    </h1>
+
+  <p>Welcome to the movie blog! this is some placeholder text for our user homescreen. Feel free to play around with the routes; they should be working! </p> 
+  <p>The footer having routes is intentional. This is for testing purposes. If you see "login" and "home" in blue - you're logged out!</p>
 
     
     {{{ body }}}
+
+
+  
   
 
 
@@ -63,27 +80,25 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
+   
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
 
       <li class="pure-menu-item">
-        <a href="/views/profile" class="pure-menu-link">Profile</a>
+        <a href="/profile" class="pure-menu-link">Profile</a>
       </li>
 
     </nav>
     {{/if}}
   </header>
+  
   <main class="container container-fluid mt-5">
-    {{{ body }}}
+
   </main>
   <footer>
       
   </footer>
-
   {{#if logged_in}}
   <script src="/css/logout.js"></script>
   {{/if}}
@@ -106,9 +121,9 @@
             </li>
             {{/if}}
         </ul>
-        <h1 id="nav-header">The Movie Blog</h1>
+        
     </nav>
-    {{{body}}}
+  
 
 
 </body>
@@ -123,5 +138,8 @@
 
 </body>
 <script src="/js/logout.js"></script>
+
+<script src="/css/logout.js"></script>
 <script src="/js/home.js"></script>
+
 </html>
