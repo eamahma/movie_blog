@@ -16,7 +16,7 @@ Note.init(
       primaryKey: true,
       autoIncrement: true,
     },
-  //   Comment: {
+     Comment: {
 
 
       type: DataTypes.STRING,
