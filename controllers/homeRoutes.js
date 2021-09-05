@@ -1,6 +1,6 @@
 
 const router = require("express").Router();
-const { User, Post, Comment } = require("../models");
+const { User, Post, Comment, Genre, Note } = require("../models");
 const sequelize = require("../config/connection");
 //home route server homepage
 router.get("/", (req, res) => {
@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
     });
 });
 
-//serve up the single post page
+//fires single post page.
 router.get("/viewpost/:id", (req, res) => {
   //we need to get all posts
   Post.findOne({
@@ -138,8 +138,10 @@ router.get("/dashboard", (req, res) => {
     });
 });
 
+
 router.get("/post", (req, res) => {
   res.render("create-post", { loggedIn: req.session.loggedIn });
+
 });
 //load the edit page
 router.get("/edit/:id", (req, res) => {
