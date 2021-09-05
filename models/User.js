@@ -24,11 +24,14 @@ User.init(
     name: {
      type: DataTypes.STRING,
      allowNull: false,
-     primaryKey:false,
+      
+
+     //validate: {
+     // notNull: { args: true, msg: "You must enter a name" }
+    //},
     },
     email: {
       type: DataTypes.STRING,
-      primaryKey:false,
       allowNull: false,
       // Validate if it is a valid email
       validate: { isEmail: true },
@@ -37,7 +40,6 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey:false,
       //make sure password has to be at least 3 char
       validate: { len: [3] },
     },

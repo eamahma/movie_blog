@@ -18,6 +18,7 @@
           console.log(response, " Logged in successfully!");
           document.location.replace("/");
         } else {
+          console.log("login error 1");
           alert(response.statusText);
         }
       }
@@ -26,15 +27,17 @@
   
     async function signupFormHandler(event) {
       event.preventDefault();
-      const username = document.querySelector("#username-signup").value.trim();
+      const name = document.querySelector("#username-signup").value.trim();
       const email = document.querySelector("#email-signup").value.trim();
       const password = document.querySelector("#password-signup").value.trim();
+      
+      console.log("firing before");
 
-      if (username && email && password) {
+      if (name && email && password) {
         const response = await fetch("/api/users", {
           method: "post",
           body: JSON.stringify({
-            username,
+            name,
             email,
             password,
           }),
@@ -43,8 +46,10 @@
     
         if (response.ok) {
           console.log(response);
+          console.log("firing ok");
         } else {
           alert(response.statusText);
+          console.log("firing else");
         }
         //then we send in a request to log into the webpage
         const responseTwo = await fetch("/api/users/login", {
@@ -59,8 +64,10 @@
         if (responseTwo.ok) {
           console.log(response, " Logged in successfully!");
           document.location.replace("/");
+          console.log("firing response 2 ok");
         } else {
           alert(response.statusText);
+          console.log("response 2 error");
         }
       }
     }

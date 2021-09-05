@@ -23,6 +23,7 @@ async function submitCommentHandler(event) {
     if (response.ok) {
       document.location.reload();
     } else {
+      console.log("ViewPost error");
       alert(response.statusText); // find better way to do this
     }
   }

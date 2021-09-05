@@ -11,7 +11,9 @@ router.post('/', withAuth, async (req, res) => {  try {
 
     res.status(200).json(newNote);
   } catch (err) {
+    console.log("Note route error 1");
     res.status(400).json(err);
+
   }
 });
 
@@ -31,6 +33,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
     res.status(200).json(noteData);
   } catch (err) {
+    console.log("Note route error 2");
     res.status(500).json(err);
   }
 });

@@ -80,6 +80,7 @@ router.get("/viewpost/:id", (req, res) => {
       });
     })
     .catch((err) => {
+      console.log("homeroute error 1");
       console.log(err);
       res.status(500).json(err);
     });
@@ -131,6 +132,7 @@ router.get("/dashboard", (req, res) => {
       res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
+      console.log("homeroute error 2");
       console.log(err);
       res.status(500).json(err);
     });
@@ -148,3 +150,4 @@ router.get("/edit/:id", (req, res) => {
   });
 });
 module.exports = router;
+

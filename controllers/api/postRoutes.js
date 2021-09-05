@@ -13,9 +13,11 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbPostData) => {
+      console.log("Post firing 1");
       res.json(dbPostData);
     })
     .catch((err) => {
+      console.log("Post route error 1");
       console.log(err);
       res.status(500).json(err);
     });
@@ -44,6 +46,7 @@ router.get("/:id", (req, res) => {
       res.json(dbPostData);
     })
     .catch((err) => {
+      console.log("Post route error 2");
       console.log(err);
       res.status(500).json(err);
     });
@@ -62,6 +65,7 @@ router.post("/", (req, res) => {
       res.json(dbPostData);
     })
     .catch((err) => {
+      console.log("Post route error 3");
       console.log(err);
       res.status(500).json(err); //REST api needs status
     });
@@ -88,6 +92,7 @@ router.put("/:id", (req, res) => {
       res.json(dbPostData);
     })
     .catch((err) => {
+      console.log("Post route error 4");
       console.log(err);
       res.json(err);
     });
@@ -107,6 +112,7 @@ router.delete("/:id", (req, res) => {
       res.json(dbPostData);
     })
     .catch((err) => {
+      console.log("Post route error 5");
       console.log(err);
       res.status(500).json(err);
     });
