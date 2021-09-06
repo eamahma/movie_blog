@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1, 
+      "title": "MVC - A Key Development Tool",
+      "body": "Remember that each of these posts may be limited by char number! ",
+      "user_id": 1
+    },
+    {
+      "id": 2, 
+      "title": "What you need to know about HW14",
+      "body": "To help make this easier on myself. ",
+      "user_id": 1
+    },
+    {
+      "id": 3, 
+      "title": "A Review on Class so Far",
+      "body": "It's beenple text Example text Example text Exampletext. ",
+      "user_id": 1
+    }
+  ]
