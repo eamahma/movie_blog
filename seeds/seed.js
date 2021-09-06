@@ -13,14 +13,14 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  
+  /*
   for (const note of noteData) {
     await Note.create({
       ...note,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
-
+ */
   // for (const genre of genreData) {
   //   await Genre.create({
   //     ...genre,
