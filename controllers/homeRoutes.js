@@ -73,7 +73,7 @@ router.get("/viewpost/:id", (req, res) => {
       const post = dbPostData.get({ plain: true }); // serialize all the posts
       console.log(post);
       const myPost = post.user_id == req.session.user_id;
-      res.render("single-post", {
+      res.render("viewPost", {
         post,
         loggedIn: req.session.loggedIn,
         currentUser: myPost,
