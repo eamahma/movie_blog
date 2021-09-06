@@ -92,6 +92,11 @@ router.get("/login", (req, res) => {
   res.render("login", { loggedIn: req.session.loggedIn });
 });
 
+router.get("/profile", (req, res) => {
+  console.log("Is logged in?", req.session.loggedIn);
+  res.render("profile", { loggedIn: req.session.loggedIn });
+});
+
 //this routes the user to the dashboard.
 router.get("/dashboard", (req, res) => {
   //retrieves all posts associated with user. 
