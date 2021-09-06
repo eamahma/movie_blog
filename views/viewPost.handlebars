@@ -1,6 +1,6 @@
 <div class="card single-post-padding">
     <h1 id="post-title" class="post-header">{{post.title}} </h1>
-    <h4>Posted by {{post.user.username}} on 12/1/2020</h4>
+    <h4>Posted by {{post.user.username}}</h4>
     <div class="container">
         <p id="post-body" class="post-text post-text-padding">{{post.body}}</p>
     </div>
@@ -25,7 +25,7 @@
 {{#each post.comments as |aComment|}}
 {{> comment aComment}}
 {{/each}}
-<link rel="stylesheet" href="/css/single-post.css">
+
 <script src="/js/viewPost.js"></script>
 <script src="/css/viewPost.js"></script>
 {{#if currentUser}}
