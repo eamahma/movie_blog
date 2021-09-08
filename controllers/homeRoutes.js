@@ -89,7 +89,7 @@ router.get("/viewpost/:id", (req, res) => {
 //serve up the login page
 router.get("/login", (req, res) => {
   console.log("Is logged in?", req.session.loggedIn);
-  res.render("login", { loggedIn: req.session.loggedIn });
+  res.render("login");
 });
 
 router.get("/profile", (req, res) => {
