@@ -24,8 +24,8 @@
                 <li class="pure-menu-item">
                     <a href="/" class="pure-menu-link">Home(logged in)</a>
                 </li>
-                <li class="pure-menu-item">
-                    <a href="/login" class="pure-menu-link">Signup or Login!</a>
+                <li>
+                  <button id="logout-btn" class="pure-menu-link">Logout</button> 
                 </li>
                 <li class="pure-menu-item">
                     <a href="/profile" class="pure-menu-link">Profile</a>
@@ -39,26 +39,27 @@
         </div>
         <h1 class="pure-menu pure-menu-horizontal">       
             <!-- <a href="#" class="pure-menu-heading pure-menu-link" id="banner">The Tech Blog</a> -->
+        
+            <span id="banner" href="/">The Movie Blog</span>
             
-            <span id="banner" >The Movie Blog</span>
             
-
         </h1>
     </nav>
-
-    <h1>
-      User Registry
-    </h1>
-
-  <p>Welcome to the movie blog! this is some placeholder text for our user homescreen. Feel free to play around with the routes; they should be working! </p> 
-  <p>The footer having routes is intentional. This is for testing purposes. If you see "login" and "home" in blue - you're logged out!</p>
-
     
     {{{ body }}}
-
-
   
+    {{#if logged_in}}
+    <h2>Articles</h2>
 
+    {{{ body }}}
+
+    <h2>Movies Near Me</h2>
+
+
+    <h2>Trending Movies</h2>
+      <canvas id="myChart" width="400" height="400"></canvas>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {{/if}}
 
 
 <body>
@@ -76,21 +77,24 @@
     {{/if}}
   </header>
   
-  <main class="container container-fluid mt-5">
+        <main class="container container-fluid mt-5">
 
   </main>
   <footer>
       
   </footer>
   {{#if logged_in}}
-  <script src="/css/logout.js"></script>
+ 
+  
   {{/if}}
+
   <nav id="navbar">
         <ul id="navbar-ul">
             <li>
                 <p><a class="link" href="/">Home</a></p>
             </li>
             {{#if loggedIn}}
+            <script src="/css/logout.js"></script>
             <li>
                 <p><a class="link" href="/dashboard">Dashboard</a></p>
             </li>
@@ -108,10 +112,7 @@
     </nav>
   
 
-
 </body>
-
-
 
 
     <footer>
@@ -120,9 +121,7 @@
   </div>
 
 </body>
-<script src="/js/logout.js"></script>
 
-<script src="/css/logout.js"></script>
-<script src="/js/home.js"></script>
+<script src="/css/home.js"></script>
 
 </html>
