@@ -34,6 +34,6 @@ Check MySQL to link to database and start server.
 ### Test Parameters
   to test, run "node seeds", then "node server". 
 ### Contact
-  Connect with us on Github @matthendrian, @eamahma, and @
+  Connect with us on Github @matthendrian, @eamahma, and @AM-cowles
   
  
