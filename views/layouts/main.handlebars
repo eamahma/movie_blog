@@ -22,27 +22,26 @@
                 </li>
                 {{#if loggedIn}}
                 <li class="pure-menu-item">
-                    <a href="/" class="pure-menu-link">Home(logged in)</a>
-                </li>
-                <li>
-                  <button id="logout-btn" class="pure-menu-link">Logout</button> 
+                    <a href="/dashboard" class="pure-menu-link">Dashboard</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="/profile" class="pure-menu-link">Profile</a>
+                  <a id="logout" class="pure-menu-link">Logout</a> 
                 </li>
+                <script src="/css/logout.js"></script>
                 {{else}}
                 <li class="pure-menu-item">
-                    <a href="/login" class="pure-menu-link">signup!</a>
+                  <a href="/login" class="pure-menu-link">Login</a>
                 </li>
             </ul>
              {{/if}}
         </div>
-        <h1 class="pure-menu pure-menu-horizontal">       
-            <!-- <a href="#" class="pure-menu-heading pure-menu-link" id="banner">The Tech Blog</a> -->
-        
+        <h1 class="pure-menu pure-menu-horizontal">
+          {{#if banner}}      
+            <span id="banner" href="/">{{banner}}</span>
+          {{else}}
             <span id="banner" href="/">The Movie Blog</span>
-            
-            
+          {{/if}}
+
         </h1>
     </nav>
     
@@ -60,65 +59,6 @@
       <canvas id="myChart" width="400" height="400"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {{/if}}
-
-
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
-   
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-
-      <li class="pure-menu-item">
-        <a href="/profile" class="pure-menu-link">Profile</a>
-      </li>
-
-    </nav>
-    {{/if}}
-  </header>
-  
-        <main class="container container-fluid mt-5">
-
-  </main>
-  <footer>
-      
-  </footer>
-  {{#if logged_in}}
- 
-  
-  {{/if}}
-
-  <nav id="navbar">
-        <ul id="navbar-ul">
-            <li>
-                <p><a class="link" href="/">Home</a></p>
-            </li>
-            {{#if loggedIn}}
-            <script src="/css/logout.js"></script>
-            <li>
-                <p><a class="link" href="/dashboard">Dashboard</a></p>
-            </li>
-            <li>
-                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
-            </li>
-
-            {{else}}
-            <li>
-                <p><a class="link" href="/login">Login</a></p>
-            </li>
-            {{/if}}
-        </ul>
-        
-    </nav>
-  
-
-</body>
-
-
-    <footer>
-      
-    </footer>
-  </div>
 
 </body>
 

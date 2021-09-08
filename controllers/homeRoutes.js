@@ -134,7 +134,7 @@ router.get("/dashboard", (req, res) => {
       }
       const posts = dbPostData.map((post) => post.get({ plain: true })); // serialize all the posts
       console.log(posts);
-      res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+      res.render("dashboard", { posts, banner: 'Dashboard',loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log("homeroute error 2");
