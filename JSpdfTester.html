@@ -1,0 +1,23 @@
+<html>
+
+    <div id="testDiv">
+        <div>Test</div>
+        <div>Test2</div>
+
+    </div>
+    <a href="javascript:genNewPDF()">Download PDF</a>
+
+
+
+<script>
+    function genNewPDF () {
+        
+    var doc = new jsPDF();
+    doc.fromHTML($('#testdiv').get(0),20,20,{
+        'width': 500 });
+    
+    doc.save('TestPDF');
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</html>
