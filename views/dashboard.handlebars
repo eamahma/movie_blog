@@ -1,6 +1,11 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+
 <h1 class="padding-20">My Posts</h1>
 <p><a class="link" href="/post">New Post</a></p>
 {{#each posts as |aPost| }}
+
 
 {{> post aPost}}
 {{/each}}
@@ -9,3 +14,17 @@
       <canvas id="myChart" width="400" height="400"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script src="/js/apiEnds.js"></script>
+ 
+ <div id="testDiv">
+        <div>Test</div>
+        <div>Test2</div>
+
+</div>
+
+<body> 
+<a href="javascript:newPDF()">Download PDF</a>
+<button onclick="javascript:demoFromHTML();">PDF</button>
+
+<script src="/js/jsPDF.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</body>
