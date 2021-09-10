@@ -116,3 +116,13 @@ footer {
   text-align: center;
 }
 
+label {
+  color: #000000;
+}
+
+.button {
+  border: solid;
+  border-radius: 4px;
+}
+
+
