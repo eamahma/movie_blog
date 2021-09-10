@@ -29,6 +29,8 @@ body {
 
 p, h3 {
   padding: .5em;
+  border-radius: .2rem;
+  margin: .5rem;
 }
 
 nav {
@@ -61,6 +63,9 @@ nav div {
   margin-bottom: 1em;
   color:#000000;
   border: solid #031426;
+  border-radius: .5rem;
+  box-shadow: 5px 5px 5px #000000;
+  
 }
 
 .center-item-h h3 {
@@ -74,6 +79,10 @@ nav div {
   /* padding: .5em; */
 }
 
+.pure-menu-link:hover, .pure-menu-link:active {
+  text-decoration: underline;
+}
+
 .pure-menu-link:link {
   color: white;
 }
@@ -82,4 +91,28 @@ nav div {
   color: white;
 }
 
+h2 {
+  padding: .5rem;
+  background-color: #031426;
+  color: #0077ff;
+  text-align-last: center;
+}
+
+canvas {
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  height: 400px;
+  width: 500px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0077ff;
+  color: #000000;
+  text-align: center;
+}
 
