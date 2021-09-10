@@ -35,5 +35,8 @@ Check MySQL to link to database and start server.
   to test, run "node seeds", then "node server". 
 ### Contact
   Connect with us on Github @matthendrian, @eamahma, and @AM-cowles
+
+### Link to live Heroku web page
+[Movie Blog](https://movies-blogs.herokuapp.com/)
   
  

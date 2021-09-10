@@ -6,7 +6,7 @@ const sequelize = require("../config/connection");
 router.get("/", (req, res) => {
   //we need to get all posts
   Post.findAll({
-    attributes: ["id", "title", "body", "user_id"],
+    attributes: ["id", "title", "body", "user_id", "date"],
     include: [
       {
         model: User,
@@ -43,7 +43,7 @@ router.get("/viewpost/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title", "body", "user_id"],
+    attributes: ["id", "title", "body", "user_id", "date"],
     include: [
       {
         model: User,
@@ -53,7 +53,7 @@ router.get("/viewpost/:id", (req, res) => {
       {
         model: Comment,
         as: "comments",
-        attributes: ["id", "comment_text", "user_id"],
+        attributes: ["id", "comment_text", "user_id", "created_at"],
         include: [
           {
             model: User,
@@ -105,7 +105,7 @@ router.get("/dashboard", (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "title", "body", "user_id"],
+    attributes: ["id", "title", "body", "user_id", "date"],
     include: [
       {
         model: User,
@@ -115,7 +115,7 @@ router.get("/dashboard", (req, res) => {
       {
         model: Comment,
         as: "comments",
-        attributes: ["id", "comment_text", "user_id"],
+        attributes: ["id", "comment_text", "user_id", "created_at"],
         include: [
           {
             model: User,
