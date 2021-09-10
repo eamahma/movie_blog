@@ -2,7 +2,7 @@
 <div id="testDiv2">
 <div class="card single-post-padding">
     <h1 id="post-title" class="post-header">{{post.title}} </h1>
-    <h4>Posted by {{post.user.username}}</h4>
+    <h4>Posted by {{post.user.name}} on {{format_date post.date}}</h4>
     <div class="container">
         <p id="post-body" class="post-text post-text-padding">{{post.body}}</p>
     </div>
