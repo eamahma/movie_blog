@@ -1,35 +1,39 @@
 
 <div class="wrapper">
-    <form class="login-form">
-        <div class="padding-md">
-            <label for="email-login">email:</label>
-            <input type="text" id="email-login" />
-        </div>
-        <div class="padding-md">
-            <label for="password-login">password:</label>
-            <input type="password" id="password-login" />
-        </div>
-        <div class="padding-md">
-            <button type="submit" id="login-btn">login</button>
-        </div>
-    </form>
-
-    <form class="signup-form">
-        <div>
-            <label for="username-signup">name:</label>
-            <input id="username-signup" type="text"/>
-        </div>
-        <div>
-            <label for="email-signup">email:</label>
-            <input type="text" id="email-signup" />
-        </div>
-        <div>
-            <label for="password-signup">password:</label>
-            <input type="password" id="password-signup" />
-        </div>
-        <div>
-            <button type="submit" id="signup-btn">signup</button>
-        </div>
+    <form class="pure-form pure-form-aligned">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="email-login">Email:</label>
+                <input type="text" id="email-login" />
+            </div>
+            <div class="pure-control-group">
+                <label for="password-login">Password:</label>
+                <input type="password" id="password-login" />
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary" id="login-btn">Login</button>
+            </div>
+            <br>
+            <div class="pure-control-group"
+                <div>
+                    <label for="username-signup">Name:</label>
+                    <input id="username-signup" type="text"/>
+                </div>
+            <div class="pure-control-group"
+                <div>
+                    <label for="email-signup">Email:</label>
+                    <input type="text" id="email-signup" />
+                </div>
+            <div class="pure-control-group"
+                <div>
+                    <label for="password-signup">Password:</label>
+                    <input type="password" id="password-signup" />
+                </div>
+                <div class="pure-controls">
+                    <button type="submit" class="pure-button pure-button-primary" id="signup-btn">Signup</button>
+                </div>
+            </div>
+        </fieldset>
     </form>
 </div>
 {{!-- Load the login script --}}
