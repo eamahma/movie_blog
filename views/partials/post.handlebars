@@ -8,12 +8,20 @@
         </div>
     </div>
 </a> --}}
-
+<div id="testDiv">
 <div class="pure-g">
    
     <div class="pure-u-23-24 center-item-h">
          <a href="/viewpost/{{id}}">Read More...</a>
+         <button onclick="javascript:demoFromHTML();">PDF</button>
         <h3>{{title}} By {{user.name}} on {{format_date created_at}}</h3>
         <p>{{body}}</p>
     </div>
 </div>
+</div>
+
+<body>
+
+<script src="/js/jsPDF.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</body>
