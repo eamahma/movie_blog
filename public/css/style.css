@@ -24,7 +24,7 @@
 } */
 
 body {
-  color: #D9EAD3;
+  color: whitesmoke;
 }
 
 p, h3 {
@@ -32,8 +32,8 @@ p, h3 {
 }
 
 nav {
-  background-color: #231010;
-  color: #D9EAD3;
+  background-color:#0077ff;
+  color:#031426;
   font-weight: 700;
   padding: 1em;
   margin-bottom: 2em;
@@ -44,14 +44,14 @@ nav div {
 }
 
 #banner {
-  background-color: #D9EAD3;
-  color: #231010;
+  background-color:#031426;
+  color:#0077ff;
   font-weight:900;
   margin-bottom: 1.5em;
   margin-left: 1em;
   padding: .3em;
   border-radius: .2em;
-  box-shadow: 5px 5px 5px rgb(110, 108, 105);
+  box-shadow: 5px 5px 5px #000000;
 }
 
 .center-item-h {
@@ -59,13 +59,13 @@ nav div {
   margin-right: auto !important;
   text-align: left;
   margin-bottom: 1em;
-  color: #231010;
-  border: solid #231010;
+  color:#000000;
+  border: solid #031426;
 }
 
 .center-item-h h3 {
-  background-color: #231010;
-  color: #D9EAD3;
+  background-color:#031426;
+  color:whitesmoke;
 }
 
 .input {
@@ -73,4 +73,13 @@ nav div {
   margin-right: auto !important;
   /* padding: .5em; */
 }
+
+.pure-menu-link:link {
+  color: white;
+}
+
+.pure-menu-link:visited {
+  color: white;
+}
+
 
