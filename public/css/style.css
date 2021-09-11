@@ -99,6 +99,7 @@ h2 {
 }
 
 canvas {
+  border-style: solid;
   margin: 2rem;
   padding: 2rem;
   border-radius: 2rem;
@@ -125,4 +126,34 @@ label {
   border-radius: 4px;
 }
 
+h1 {
+  color: white;
+  text-align-last: left;
+}
 
+h4 {
+  color: #031426;
+}
+
+p {
+  color: black;
+}
+
+.card {
+  border-style: solid;
+  border-radius: 1rem;
+  border-color: #031426;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #0077ff;
+  box-shadow: 5px 5px 5px #000000;
+}
+
+.post-header {
+  margin: 1rem;
+  border-style: solid;
+  border-radius: .5rem;
+  border-color: #031426;
+  padding: .5rem;
+  background-color: #031426;
+}
