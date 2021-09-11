@@ -137,6 +137,8 @@ h4 {
 
 p {
   color: black;
+  margin: 1rem;
+  padding: .5rem; 
 }
 
 .card {
@@ -156,4 +158,15 @@ p {
   border-color: #031426;
   padding: .5rem;
   background-color: #031426;
+}
+
+h {
+  color: #031426;
+  margin: 1rem;
+  padding: .5rem; 
+}
+
+.pure-form {
+  margin: 1rem;
+  padding: 1rem;
 }
