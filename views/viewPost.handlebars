@@ -13,13 +13,16 @@
     {{/if}}
 </div>
 {{!-- Add Comment --}}
-<div class="padding-20">
-    <form id="comment-form " class="padding-20">
-        <label for="comment-text">Leave A Comment!</label>
-        <input class="padding-20" type="textarea" name="comment-text" id="comment-text">
-        <button class="padding-20" id="post-comment-btn">Post!</button>
-    </form>
-</div>
+<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group" id="comment-form ">
+            <label for="comment-text">Leave A Comment!</label>
+            <input class="padding-20" type="textarea" name="comment-text" id="comment-text"/>
+                <button class="pure-button pure-button-primary" id="post-comment-btn">Post!</button>
+                <button class="pure-button pure-button-primary" onclick="javascript:getPDF();">PDF</button>
+        </div>
+    </fieldset>
+</form>
 
 {{!-- Handle the comments --}}
 {{#each post.comments as |aComment|}}
@@ -34,4 +37,3 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 <script src="/js/jsPDF.js"></script>
-<button onclick="javascript:getPDF();">PDF</button>
